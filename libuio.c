@@ -112,6 +112,7 @@ uint8_t UIO_UNMAP(void * blockToFree) {
 			munmap(arrayItem->mapPtr, arrayItem->map_size);
 			close(arrayItem->uio_fd);
 			free(arrayItem);
+			uios[i] = NULL;
 			//fprintf(stderr, "UIO device unmapped successfully\n");
 			return 0;
 		}
